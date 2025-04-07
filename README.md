@@ -21,27 +21,52 @@ Cada veículo é representado por um **objeto da classe `No`**, que atua como um
 
 ---
 
-### 📄 2. Leitura dos dados com `LeitorArquivo`
+Claro! Aqui está a seção **mesclada** e melhor explicada sobre a **leitura de dados e montagem da lista** com base no arquivo `rodizio_de_veiculos.txt`, já dentro do contexto da lista circular:
 
-Os dados dos veículos são lidos de um arquivo chamado `rodizio_de_veiculos.txt`, onde cada linha contém:
+---
+
+### 📄 2. Leitura dos Dados e Montagem da Lista Circular
+
+Antes de montar a lista, o sistema realiza a leitura dos dados de um arquivo chamado `rodizio_de_veiculos.txt`. Cada linha desse arquivo representa um veículo e contém as informações separadas por ponto e vírgula `;`, no seguinte formato:
 
 ```text
 PLACA;DIA_DA_SEMANA;HORÁRIO
 ```
 
-Exemplo:
-
+#### 🧾 Exemplo de linha:
 ```
 ABC-1234;Segunda-feira;07:00-10:00
-DEF-5678;Terça-feira;17:00-20:00
 ```
 
-O método `carregarVeiculos` filtra os dados com base em:
+O sistema percorre o arquivo linha por linha, realizando o **split da string** para extrair as partes:
 
-- Dia da semana (**ex: Segunda-feira**), ou
-- Final da placa (**ex: final 4**).
+```java
+String[] partes = linha.split(";");
+String placa = partes[0];
+String diaSemana = partes[1];
+String horario = partes[2];
+```
 
-Se a linha do arquivo corresponde ao filtro escolhido, um novo nó `No` é criado e **inserido na lista circular**.
+Esses dados são então **filtrados de acordo com o critério definido pelo usuário**, que pode escolher:
+
+- Um **dia da semana** (ex: “Terça-feira”), ou  
+- Um **final de placa** (ex: veículos com placa terminando em "4").
+
+Se a linha lida do arquivo corresponder ao filtro selecionado, o sistema cria um **novo nó (`No`) com essas informações** e o insere na **lista circular**.
+
+---
+
+#### 🔄 Como a lista é montada?
+
+A cada veículo válido (isto é, que passou pelo filtro), o sistema:
+
+1. Cria um novo objeto `No` com os dados do veículo.
+2. Insere esse nó no final da lista circular.
+3. Garante que o último nó da lista aponte de volta para o primeiro, mantendo a **circularidade**.
+
+Esse processo é feito pela classe `ListaCircular`, que cuida da lógica de encadeamento dos nós.
+
+💡 Esse encadeamento circular é importante para permitir a navegação contínua entre os veículos, sem interrupção.
 
 ---
 
