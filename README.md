@@ -21,10 +21,6 @@ Cada veículo é representado por um **objeto da classe `No`**, que atua como um
 
 ---
 
-Claro! Aqui está a seção **mesclada** e melhor explicada sobre a **leitura de dados e montagem da lista** com base no arquivo `rodizio_de_veiculos.txt`, já dentro do contexto da lista circular:
-
----
-
 ### 📄 2. Leitura dos Dados e Montagem da Lista Circular
 
 Antes de montar a lista, o sistema realiza a leitura dos dados de um arquivo chamado `rodizio_de_veiculos.txt`. Cada linha desse arquivo representa um veículo e contém as informações separadas por ponto e vírgula `;`, no seguinte formato:
