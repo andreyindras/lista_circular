@@ -163,24 +163,6 @@ Como a lista é circular, o sistema nunca “acaba”. Após o último veículo,
 
 ---
 
-### 🧹 6. Liberação de memória
-
-Ao final, a lista é "desfeita" para liberar os nós:
-
-```java
-No temp = inicio;
-do {
-    No proximo = temp.proximo;
-    temp.proximo = null; // Remove ligação
-    temp = proximo;
-} while (temp != inicio);
-
-inicio = null;
-atual = null;
-```
-
----
-
 ### 🧑‍💻 7. Controle com `Main`
 
 A classe `Main` orquestra o sistema:
@@ -212,14 +194,3 @@ Navegação contínua entre os veículos
    ↓
 Liberação da lista
 ```
-
----
-
-## 🎯 Por que usar **lista circular**?
-
-A lista circular foi escolhida porque:
-
-- Permite **navegação contínua** entre os veículos, sem ponto de parada.
-- Evita a necessidade de reiniciar o ponteiro manualmente.
-- Simula bem situações cíclicas, como o rodízio semanal de veículos.
-- Ajuda a entender melhor o conceito de listas encadeadas com comportamento dinâmico.
